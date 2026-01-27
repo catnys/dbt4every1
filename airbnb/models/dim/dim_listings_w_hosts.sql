@@ -1,3 +1,9 @@
+{{
+  config(
+    materialized='view',
+  )
+}}
+
 WITH
 cte_l AS (
     SELECT

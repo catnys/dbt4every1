@@ -1,3 +1,8 @@
+{{
+  config(
+    materialized='view',
+  )
+}}
 WITH cte_src_listings AS (
     SELECT * FROM {{ref('src_listings')}}  -- dbt specific jinja referral
 )
