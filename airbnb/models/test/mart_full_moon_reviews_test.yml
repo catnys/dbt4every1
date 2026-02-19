@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: mart_full_moon_reviews # --> model name should be the same as the file name
+    columns:
+      - name: listing_id
+        tests:
+          - not_null
+      - name: reviewer_name
+        tests:
+          - not_null
+      - name: review_sentiment
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['positive', 'negative', 'neutral']
+      - name: is_full_moon
+        tests: # data_tests --> are older version of tests. Using data_tests: instead of tests: is the modern syntax for dbt v1.8+, 
+          - not_null
+          - accepted_values:
+              values: ['not full moon', 'full moon']
