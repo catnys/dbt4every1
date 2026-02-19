@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: dim_cust_synthetic_cleansed
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+      - name: email
+        description: "Email address should not be empty; if empty, it should be 'Unknown'"
+        tests:
+          - not_null
+
+
+          # onun için mapping tablosuna ihtiyacın var. 
+          # custom bir yetki tablosu oluştur rls
+          # ali tablonun 1. --> bizim repoya bakarak oluştur sentetik veri

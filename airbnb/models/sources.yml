@@ -12,3 +12,12 @@ sources:
 
     - name: reviews
       identifier: raw_reviews
+      #config:
+      #  loaded_at_field: date
+      #  freshness:
+      #    warn_after: {count: 1, period: hour}
+      #    error_after: {count: 24, period: hour}
+
+    - name: cust_synthetic 
+      identifier: RAW_CUST_SYNTHETIC_DATASET # --> bu snowflake'deki orijinal tablo adı
+      
